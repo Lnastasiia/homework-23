@@ -1,8 +1,10 @@
 
-let number = Math.floor(Math.random()*100);
+let number = Math.floor(Math.random()*100) + 1;
 console.log (number);
 let count = 10;
+
 function guessNumber (){
+
     if (count > 0) {
 
         let userNum = document.getElementById('myNumber').value;
@@ -11,6 +13,9 @@ function guessNumber (){
 
         if (userNum == number) {
             decryptionPlace.innerHTML = 'Поздравляю!!! Вы угадали!!!';
+           
+            return;
+           
         }
         else if (userNum > number) {
             decryptionPlace.innerHTML = 'Ваше число больше моего!';
@@ -22,7 +27,7 @@ function guessNumber (){
         document.getElementById('count').innerHTML = count;
     }
     else {
-        alert ('Попытки закончились. Вы проиграли!');
+        alert(`Попытки закончились. Вы проиграли! Загаданное число: ${number}`);
         location.reload ();
     }
    
